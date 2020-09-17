@@ -6,29 +6,21 @@
 </head>
 <body>
   <header>
-    <a href="./index.html">
-      <img src="./assets/img/logo.svg" title="Logo" alt="Logo">
+    <a href="index.html">
+      <img src="assets/img/logo.svg" title="Logo" alt="Logo">
     </a>
-    <nav>
-      <ol>
-        <li>
-          <a href="./index.html">Accueil</a>
-        </li>
-        <li>
-          <a href="./products.html">Produits</a>
-        </li>
-        <li>
-          <a href="./contact.html">Contact</a>
-        </li>
-        <li>
-          <a href="./shopping-cart.html">Panier</a>
-        </li>
-      </ol>
+    <nav id="navigation">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="products.html">Produits</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="shopping-cart.html">Panier</a></li>
+      </ul>
     </nav>
   </header>
   <form action="confirmation.html">
-    <section>
-      <h1>Contact</h1>
+    <fieldset>
+      <legend>Contact</legend>
       <label for="firstname">Prénom</label>
       <input required id="firstname" type="text"><br>
 
@@ -40,24 +32,26 @@
 
       <label for="phone">Numéro de téléphone</label>
       <input required id="phone" type="tel">
+    </fieldset>
 
-    </section>
-
-    <section>
-      <h1>Paiement</h1>
+    <fieldset>
+      <legend>Paiement</legend>
       <label for="creditcard">Numéro de carte de crédit</label>
       <input required id="creditcard" type="text" pattern="[0-9]{13,16}"><br>
 
       <label for="creditcardexpiry">Date d'expiration</label>
       <input required id="creditcardexpiry" placeholder="MM/YY" pattern="([0-9]{2}[/]?){2}"><br>
-    </section>
+    </fieldset>
 
     <input type="submit" value="Confirmer">
   </form>
   
 
   <footer>
-    <span>Annie Rochette - 1896142</span>
+    <p>
+      Annie Rochette - 1896142<br>
+      Maxime Bernier - 1893115
+    </p>
   </footer>
 </body>
 </html>
