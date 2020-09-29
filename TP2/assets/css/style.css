@@ -1,6 +1,6 @@
 body {
-    padding-left: 20px;
-    padding-right: 20px;
+    /* padding-left: 20px;
+    padding-right: 20px; */
     font-family: Arial, sans-serif;
     color: black;
     max-width: 1200px;
@@ -9,19 +9,93 @@ body {
 header {
     height: 60px;
     background-color: #14597f;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 25px;
+}
 
+main {
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 header a img {
-    height: 60px;
+    height: 40px;
+    align-self: flex-start;
+    padding-left: 20px;
 }
-header .active {
-    background-color: #1fb5e9;
-    border-radius: 4px;
+header nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
 }
 
-header nav {
+header nav ul li .active {
+    background-color: #1fb5e9;
+    border-radius: 4px;
+    padding: 10px 15px 10px 15px;
+}
+
+nav ul li a {
     color: white;
+    margin-right: 30px;
+    text-decoration: none;
+}
+
+.fa.fa-shopping-cart.fa-stack-1x{
+    color: #14597f;
+}
+
+nav ul li a .count {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    background-color: #d9534f;
+    padding: 4px 8px 4px 8px;
+    border-radius: 100px;
+    font-size: small;
+}
+
+.index article img {
+    float: right;
+    height: 350px;
+}
+
+.index article .btn {
+    color: white;
+    padding: 10px;
+    background-color: #14597f;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: small;
+}
+
+.index article .btn:hover {
+    color: white;
+    padding: 10px;
+    background-color:  #1fb5e9;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: small;
+}
+
+.fa.fa-shopping-cart.fa-stack-1x{
+    color: #14597f;
+}
+
+nav ul li a .count {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    background-color: #d9534f;
+    padding: 4px 8px 4px 8px;
+    border-radius: 100px;
+    font-size: small;
 }
 
 footer {
