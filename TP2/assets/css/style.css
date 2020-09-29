@@ -25,5 +25,12 @@ header nav {
 }
 
 footer {
+    position: absolute;
+    bottom: 0;
+    background-color: #eeeeee;
+    border-top: 1px solid #cccccc;
     height: 70px;
+    width: 100%;
+    line-height: 70px;
+    text-align: center;
 }
