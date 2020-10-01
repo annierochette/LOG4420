@@ -125,6 +125,37 @@ footer {
     transition-timing-function: ease-out;
 }
 
+/* Page d'un produit */
+.row {
+    display: flex;
+    justify-content: flex-start;
+    clear: both;
+}
+
+
+.col>section:nth-child(2) {
+    border-bottom: 1px dotted #999999;
+    margin-bottom: 10px;
+}
+
+.col>form {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    float: right
+}
+
+.col>form>input {
+    margin: 10px 10px 0 0;   
+    text-align: center;
+    width: 50px;
+    height: 46px;
+}
+
+.col>form>label {
+    margin: 10px 10px 0 0;   
+}
+
 /* Page de contact */
 #coordinates {
     display: flex;
