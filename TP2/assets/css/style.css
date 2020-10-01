@@ -127,8 +127,8 @@ footer {
 
 /* Page de contact */
 #coordinates {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    justify-content: space-around;
     text-align: center;
     border: 1px solid #999999;
     border-radius: 4px;;
