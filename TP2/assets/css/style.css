@@ -6,6 +6,7 @@ body {
     max-width: 1200px;
 }
 
+/* Header */
 header {
     height: 60px;
     background-color: #14597f;
@@ -61,6 +62,7 @@ nav ul li a .count {
     font-size: small;
 }
 
+/* Page d'accueil */
 .index article img {
     float: right;
     height: 350px;
@@ -98,6 +100,128 @@ nav ul li a .count {
     font-size: small;
 }
 
+/* Page des produits */
+.products {
+    display: flex;
+    flex-direction: row;
+}
+
+.products .filters {
+    margin-top: 20px;
+    width: 25%;
+    margin-right: 15px;
+}
+
+.products .filters section h2{
+    font-size: 18px;
+}
+
+.btn-group button{
+    background-color: white;
+    transition: background-color 0.2s ease;
+    align-self: flex-start;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    border: #999999 solid 1px;
+}
+
+.btn-group button:hover {
+    background-color: #f3f3f3 ;
+    align-self: flex-start;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    border: #999999 solid 1px;
+}
+
+.btn-group button:focus{
+    background-color: #ddf2fb ;
+    align-self: flex-start;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    border: #999999 solid 1px;
+}
+
+.btn-group button:not(:last-child) {
+    border-bottom: none;
+}
+
+.btn-group button:last-child {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.btn-group button:first-child {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.products .list {
+    width: 75%;
+}
+
+.products section section div{
+    display: flex;
+    flex-direction: column;
+}
+
+.products .products-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-left: 15px;
+    width: 96%;
+}
+
+.products .products-title h1{
+    font-size: 30px;
+}
+
+.products .products-title p{
+    text-align: end;
+}
+
+.products-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    position: relative;
+    bottom: 14px;
+}
+
+.products-list a img {
+    height: 180px;
+}
+
+.products-list a h2 {
+    font-size: 16px;
+    position: relative;
+    right: 10px;
+}
+
+.products-list a {
+    margin-top: 15px;
+    margin-right: 3px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border:1px solid black;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.products-list a p {
+    text-align: end;
+    position: relative;
+    left: 10px;
+    top: 10px;
+}
+
 footer {
     position: absolute;
     bottom: 0;
@@ -107,6 +231,7 @@ footer {
     width: 100%;
     line-height: 70px;
     text-align: center;
+    color: black;
 }
 
 .redirectButton {
