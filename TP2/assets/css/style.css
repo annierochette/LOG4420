@@ -218,6 +218,7 @@ footer {
     border-top: 1px solid #cccccc;
     height: 70px;
     width: 100%;
+    max-width: 1200px;
     line-height: 70px;
     text-align: center;
     color: black;
