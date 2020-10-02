@@ -311,15 +311,18 @@ th {
     padding-bottom: 10px;
 }
 
-th, tr:last-child {
+th,
+tr:last-child {
     border-bottom: 1px solid black;
 }
 
-th:last-child, td:last-child {
+th:last-child,
+td:last-child {
     text-align: right;
 }
 
-th:first-child, td:first-child {
+th:first-child,
+td:first-child {
     padding-left: 0;
     width: 30px;
     max-width: 30px;
@@ -352,11 +355,13 @@ td>a {
     text-decoration: none;
 }
 
-th:nth-child(3), td:nth-child(3) {
+th:nth-child(3),
+td:nth-child(3) {
     padding-left: 50px;
 }
 
-th:nth-child(4), td:nth-child(4) {
+th:nth-child(4),
+td:nth-child(4) {
     padding-left: 90px;
 }
 
