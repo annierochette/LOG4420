@@ -34,6 +34,8 @@ header nav ul {
     justify-content: flex-end;
     align-items: center;
     list-style: none;
+    position: relative;
+    left: 40px;
 }
 
 header nav ul li .active {
@@ -86,20 +88,6 @@ nav ul li a .count {
     font-size: small;
 }
 
-.fa.fa-shopping-cart.fa-stack-1x{
-    color: #14597f;
-}
-
-nav ul li a .count {
-    position: absolute;
-    top: 40px;
-    right: 50px;
-    background-color: #d9534f;
-    padding: 4px 8px 4px 8px;
-    border-radius: 100px;
-    font-size: small;
-}
-
 /* Page des produits */
 .products {
     display: flex;
@@ -133,15 +121,11 @@ nav ul li a .count {
     text-align: left;
     padding: 10px;
     border: #999999 solid 1px;
+    cursor: pointer;
 }
 
 .btn-group button:focus{
     background-color: #ddf2fb ;
-    align-self: flex-start;
-    width: 100%;
-    text-align: left;
-    padding: 10px;
-    border: #999999 solid 1px;
 }
 
 .btn-group button:not(:last-child) {
@@ -210,9 +194,14 @@ nav ul li a .count {
     margin-right: 3px;
     padding-left: 20px;
     padding-right: 20px;
-    border:1px solid black;
+    border:1px solid #999999;
     border-radius: 4px;
     text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.products-list a:hover {
+    background-color: #f3f3f3
 }
 
 .products-list a p {
