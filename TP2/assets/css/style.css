@@ -1,411 +1,411 @@
 body {
-    /* padding-left: 20px;
-    padding-right: 20px; */
-    font-family: Arial, sans-serif;
-    color: black;
-    max-width: 1200px;
+  /* padding-left: 20px;
+  padding-right: 20px; */
+  font-family: Arial, sans-serif;
+  color: black;
+  max-width: 1200px;
 }
 
 /* Header */
 header {
-    height: 60px;
-    background-color: #14597f;
-    max-width: 1200px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-right: 25px;
+  height: 60px;
+  background-color: #14597f;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 25px;
 }
 
 main {
-    padding-left: 20px;
-    padding-right: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 header a img {
-    height: 40px;
-    align-self: flex-start;
-    padding-left: 20px;
+  height: 40px;
+  align-self: flex-start;
+  padding-left: 20px;
 }
 header nav ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-    align-items: center;
-    list-style: none;
-    position: relative;
-    left: 40px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  position: relative;
+  left: 40px;
 }
 
 header nav ul li .active {
-    background-color: #1fb5e9;
-    border-radius: 4px;
-    padding: 10px 15px 10px 15px;
+  background-color: #1fb5e9;
+  border-radius: 4px;
+  padding: 10px 15px 10px 15px;
 }
 
 nav ul li a {
-    color: white;
-    margin-right: 30px;
-    text-decoration: none;
+  color: white;
+  margin-right: 30px;
+  text-decoration: none;
 }
 
 .fa.fa-shopping-cart.fa-stack-1x{
-    color: #14597f;
+  color: #14597f;
 }
 
 nav ul li a .count {
-    position: relative;
-    top: 14px;
-    right: 15px;
-    background-color: #d9534f;
-    padding: 4px 8px 4px 8px;
-    border-radius: 100px;
-    font-size: small;
+  position: relative;
+  top: 14px;
+  right: 15px;
+  background-color: #d9534f;
+  padding: 4px 8px 4px 8px;
+  border-radius: 100px;
+  font-size: small;
 }
 
 /* Page d'accueil */
 .index article img {
-    float: right;
-    height: 350px;
+  float: right;
+  height: 350px;
 }
 
 .index article .btn {
-    color: white;
-    padding: 10px;
-    background-color: #14597f;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: small;
+  color: white;
+  padding: 10px;
+  background-color: #14597f;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: small;
 }
 
 .index article .btn:hover {
-    color: white;
-    padding: 10px;
-    background-color:  #1fb5e9;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: small;
+  color: white;
+  padding: 10px;
+  background-color:  #1fb5e9;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: small;
 }
 
 /* Page des produits */
 .products {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .products .filters {
-    margin-top: 20px;
-    width: 25%;
-    margin-right: 15px;
+  margin-top: 20px;
+  width: 25%;
+  margin-right: 15px;
 }
 
 .products .filters section h2{
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .btn-group button{
-    background-color: white;
-    transition: background-color 0.2s ease;
-    align-self: flex-start;
-    width: 100%;
-    text-align: left;
-    padding: 10px;
-    border: #999999 solid 1px;
+  background-color: white;
+  transition: background-color 0.2s ease;
+  align-self: flex-start;
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+  border: #999999 solid 1px;
 }
 
 .btn-group button:hover {
-    background-color: #f3f3f3 ;
-    align-self: flex-start;
-    width: 100%;
-    text-align: left;
-    padding: 10px;
-    border: #999999 solid 1px;
-    cursor: pointer;
+  background-color: #f3f3f3 ;
+  align-self: flex-start;
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+  border: #999999 solid 1px;
+  cursor: pointer;
 }
 
 .btn-group button:focus{
-    background-color: #ddf2fb ;
+  background-color: #ddf2fb ;
 }
 
 .btn-group button:not(:last-child) {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .btn-group button:last-child {
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 .btn-group button:first-child {
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .products .list {
-    width: 75%;
+  width: 75%;
 }
 
 .products section section div{
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .products .products-title {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 5px;
-    margin-left: 15px;
-    width: 96%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5px;
+  margin-left: 15px;
+  width: 96%;
 }
 
 .products .products-title h1{
-    font-size: 30px;
+  font-size: 30px;
 }
 
 .products .products-title p{
-    text-align: end;
+  text-align: end;
 }
 
 .products-list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex-grow: 1;
-    justify-content: space-evenly;
-    position: relative;
-    bottom: 14px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  justify-content: space-evenly;
+  position: relative;
+  bottom: 14px;
 }
 
 .products-list a img {
-    height: 180px;
+  height: 180px;
 }
 
 .products-list a h2 {
-    font-size: 16px;
-    position: relative;
-    right: 10px;
+  font-size: 16px;
+  position: relative;
+  right: 10px;
 }
 
 .products-list a {
-    margin-top: 15px;
-    margin-right: 3px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border:1px solid #999999;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: background-color 0.2s ease;
+  margin-top: 15px;
+  margin-right: 3px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border:1px solid #999999;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
 }
 
 .products-list a:hover {
-    background-color: #f3f3f3
+  background-color: #f3f3f3
 }
 
 .products-list a p {
-    text-align: end;
-    position: relative;
-    left: 10px;
-    top: 10px;
+  text-align: end;
+  position: relative;
+  left: 10px;
+  top: 10px;
 }
 
 footer {
-    position: absolute;
-    bottom: 0;
-    background-color: #eeeeee;
-    border-top: 1px solid #cccccc;
-    height: 70px;
-    width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: #eeeeee;
+  border-top: 1px solid #cccccc;
+  height: 70px;
+  width: 100%;
 }
 
 footer>p {
-    max-width: 1200px;
-    line-height: 35px;
-    text-align: center;
-    color: black;
+  max-width: 1200px;
+  line-height: 35px;
+  text-align: center;
+  color: black;
 }
 
 .redirectButton {
-    background-color: #14597f;
-    border: 1px solid #0b2d3d;
-    border-radius: 4px;
-    color: white;
-    font-weight: bold;
-    height: 50px;
-    min-width: 75px;
+  background-color: #14597f;
+  border: 1px solid #0b2d3d;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  height: 50px;
+  min-width: 75px;
 }
 
 .redirectButton:hover {
-    background-color: #1fb5e9;
-    transition-delay: 0.2s;
-    transition-timing-function: ease-out;
+  background-color: #1fb5e9;
+  transition-delay: 0.2s;
+  transition-timing-function: ease-out;
 }
 
 /* Page d'un produit */
 .row {
-    display: flex;
-    justify-content: flex-start;
-    clear: both;
+  display: flex;
+  justify-content: flex-start;
+  clear: both;
 }
 
 
 .col>section:nth-child(2) {
-    border-bottom: 1px dotted #999999;
-    margin-bottom: 10px;
+  border-bottom: 1px dotted #999999;
+  margin-bottom: 10px;
 }
 
 .col>form {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    float: right
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  float: right
 }
 
 .col>form>input {
-    margin: 10px 10px 0 0;   
-    text-align: center;
-    width: 50px;
-    height: 46px;
+  margin: 10px 10px 0 0;   
+  text-align: center;
+  width: 50px;
+  height: 46px;
 }
 
 .col>form>label {
-    margin: 10px 10px 0 0;   
+  margin: 10px 10px 0 0;   
 }
 
 /* Page de contact */
 #coordinates {
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-    border: 1px solid #999999;
-    border-radius: 4px;
-    padding-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  border: 1px solid #999999;
+  border-radius: 4px;
+  padding-bottom: 20px;
 }
 
 #coordinates section i {
-    display: block;
-    padding: 20px 0;
+  display: block;
+  padding: 20px 0;
 }
 
 #coordinates section a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 /* Page du panier d'achats */
 table {
-    border-collapse: collapse;
-    table-layout: fixed;
-    width:100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  width:100%;
 }
 
 td {
-    height: 50px;
-    padding-left: 20px;
+  height: 50px;
+  padding-left: 20px;
 }
 
 th {
-    text-align: left;
-    padding-left: 20px;
-    padding-bottom: 10px;
+  text-align: left;
+  padding-left: 20px;
+  padding-bottom: 10px;
 }
 
 th,
 tr:last-child {
-    border-bottom: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 th:last-child,
 td:last-child {
-    text-align: right;
+  text-align: right;
 }
 
 th:first-child,
 td:first-child {
-    padding-left: 0;
-    width: 30px;
-    max-width: 30px;
-    text-align: center;
+  padding-left: 0;
+  width: 30px;
+  max-width: 30px;
+  text-align: center;
 }
 
 td>div {
-    display: inline-block;
+  display: inline-block;
 }
 
 td>div:nth-child(2) {
-    width: 40px;
-    text-align: center;
+  width: 40px;
+  text-align: center;
 }
 
 .roundButton {
-    border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    background-color: #dddddd;
-    text-align: center;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #dddddd;
+  text-align: center;
 }
 
 td>button:hover {
-    background-color: #bbbbbb;
+  background-color: #bbbbbb;
 }
 
 td>a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 th:nth-child(3),
 td:nth-child(3) {
-    padding-left: 50px;
+  padding-left: 50px;
 }
 
 th:nth-child(4),
 td:nth-child(4) {
-    padding-left: 90px;
+  padding-left: 90px;
 }
 
 #commandButton {
-    float: right;
+  float: right;
 }
 
 #commandLink {
-    text-decoration: none;
-    font-weight: bold;
-    color: white;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
 }
 
 table~p {
-    text-align: right;
+  text-align: right;
 }
 
 /* Page de commande */
 .orderGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 20px;
-    row-gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 20px;
 }
 
 .orderGrid label {
-    display: block;
-    width: 100%;
-    height: 20px;
-    font-weight: bold;
+  display: block;
+  width: 100%;
+  height: 20px;
+  font-weight: bold;
 }
 
 .orderGrid input {
-    display: block;
-    width: 100%;
-    height: 30px;
+  display: block;
+  width: 100%;
+  height: 30px;
 }
 
 form button {
-    margin: 10px 0 0 0;
-    float: right;
+  margin: 10px 0 0 0;
+  float: right;
 }
 
 .form-control {
-    border: 1px solid #999999;
-    border-radius: 4px;
+  border: 1px solid #999999;
+  border-radius: 4px;
 }
