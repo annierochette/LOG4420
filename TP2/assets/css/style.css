@@ -276,7 +276,8 @@ footer {
     justify-content: space-around;
     text-align: center;
     border: 1px solid #999999;
-    border-radius: 4px;;
+    border-radius: 4px;
+    padding-bottom: 20px;
 }
 
 #coordinates section i {
@@ -398,12 +399,4 @@ form button {
 .form-control {
     border: 1px solid #999999;
     border-radius: 4px;
-}
-
-
-
-
-/* FOR TESTING ONLY */
-#simpleBorder {
-    border: 5px solid black;
 }
