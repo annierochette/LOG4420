@@ -330,7 +330,7 @@ td>div:nth-child(2) {
     text-align: center;
 }
 
-td>div>button {
+.roundButton {
     border: none;
     border-radius: 50%;
     width: 30px;
