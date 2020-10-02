@@ -111,7 +111,7 @@ nav ul li a .count {
   width: 100%;
   text-align: left;
   padding: 10px;
-  border: #999999 solid 1px;
+  border: #999 solid 1px;
 }
 
 .btn-group button:hover {
@@ -120,7 +120,7 @@ nav ul li a .count {
   width: 100%;
   text-align: left;
   padding: 10px;
-  border: #999999 solid 1px;
+  border: #999 solid 1px;
   cursor: pointer;
 }
 
@@ -194,7 +194,7 @@ nav ul li a .count {
   margin-right: 3px;
   padding-left: 20px;
   padding-right: 20px;
-  border:1px solid #999999;
+  border:1px solid #999;
   border-radius: 4px;
   text-decoration: none;
   transition: background-color 0.2s ease;
@@ -214,8 +214,8 @@ nav ul li a .count {
 footer {
   position: absolute;
   bottom: 0;
-  background-color: #eeeeee;
-  border-top: 1px solid #cccccc;
+  background-color: #eee;
+  border-top: 1px solid #ccc;
   height: 70px;
   width: 100%;
 }
@@ -252,7 +252,7 @@ footer>p {
 
 
 .col>section:nth-child(2) {
-  border-bottom: 1px dotted #999999;
+  border-bottom: 1px dotted #999;
   margin-bottom: 10px;
 }
 
@@ -279,7 +279,7 @@ footer>p {
   display: flex;
   justify-content: space-around;
   text-align: center;
-  border: 1px solid #999999;
+  border: 1px solid #999;
   border-radius: 4px;
   padding-bottom: 20px;
 }
@@ -343,12 +343,12 @@ td>div:nth-child(2) {
   border-radius: 50%;
   width: 30px;
   height: 30px;
-  background-color: #dddddd;
+  background-color: #ddd;
   text-align: center;
 }
 
 td>button:hover {
-  background-color: #bbbbbb;
+  background-color: #bbb;
 }
 
 td>a {
@@ -406,6 +406,6 @@ form button {
 }
 
 .form-control {
-  border: 1px solid #999999;
+  border: 1px solid #999;
   border-radius: 4px;
 }
