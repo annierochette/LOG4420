@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="3">
+
+  <testsuite name="2-product"
+    errors="0" failures="0" hostname="" id="" package="2-product" skipped="0"
+    tests="3" time="7.275" timestamp="">
+  
+    <testcase name="Page d&#39;un produit" classname="2-product" time="1.143" assertions="5">
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Produit invalide" classname="2-product" time="0.2550" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Ajout de produits dans le panier" classname="2-product" time="5.877" assertions="8">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+
+  
+    <system-err>
+        NoSuchElementError: An error occurred while running .submitForm() command on &lt;#order-form&gt;: 
+   {&#34;state&#34;:&#34;success&#34;,&#34;sessionId&#34;:&#34;1c9fd0f4-f513-460f-9674-5c137dac5ac0&#34;,&#34;value&#34;:[],&#34;status&#34;:0}
+       at runMicrotasks (&lt;anonymous&gt;)
+       at processTicksAndRejections (internal/process/task_queues.js:97:5)
+  NoSuchElementError: An error occurred while running .clearValue() command on &lt;#first-name&gt;: 
+   {&#34;state&#34;:&#34;success&#34;,&#34;sessionId&#34;:&#34;1c9fd0f4-f513-460f-9674-5c137dac5ac0&#34;,&#34;value&#34;:[],&#34;status&#34;:0}
+       at runMicrotasks (&lt;anonymous&gt;)
+       at processTicksAndRejections (internal/process/task_queues.js:97:5)
+  NoSuchElementError: An error occurred while running .setValue() command on &lt;#first-name&gt;: 
+   {&#34;state&#34;:&#34;success&#34;,&#34;sessionId&#34;:&#34;1c9fd0f4-f513-460f-9674-5c137dac5ac0&#34;,&#34;value&#34;:[],&#34;status&#34;:0}
+       at runMicrotasks (&lt;anonymous&gt;)
+       at processTicksAndRejections (internal/process/task_queues.js:97:5)
+  NoSuchElementError: An error occurred while running .getText() command on &lt;#first-name-error&gt;: 
+   {&#34;state&#34;:&#34;success&#34;,&#34;sessionId&#34;:&#34;1c9fd0f4-f513-460f-9674-5c137dac5ac0&#34;,&#34;value&#34;:[],&#34;status&#34;:0}
+       at runMicrotasks (&lt;anonymous&gt;)
+       at processTicksAndRejections (internal/process/task_queues.js:97:5)
+  NoSuchElementError: An error occurred while running .submitForm() command on &lt;#order-form&gt;: 
+   {&#34;state&#34;:&#34;success&#34;,&#34;sessionId&#34;:&#34;1c9fd0f4-f513-460f-9674-5c137dac5ac0&#34;,&#34;value&#34;:[],&#34;status&#34;:0}
+       at runMicrotasks (&lt;anonymous&gt;)
+       at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    </system-err>
+  
+
+    
+
+  
+  </testsuite>
+</testsuites>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="5"
+            tests="6">
+
+  <testsuite name="3-shopping-cart"
+    errors="0" failures="5" hostname="" id="" package="3-shopping-cart" skipped="0"
+    tests="6" time="8.022" timestamp="">
+  
+    <testcase name="Aucun produit dans le panier" classname="3-shopping-cart" time="1.535" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Un ou plusieurs produits dans le panier" classname="3-shopping-cart" time="5.050" assertions="2">
+
+      <failure message="Error while running &#34;elementIdText&#34; command: La quantité pour le produit &#39;Apple TV&#39; doit être &#39;2&#39;.: expected &#39;2&#39; to equal 2 - expected &#34;2&#34; but got: &#34;2&#34;">AssertionError: Error while running &#34;elementIdText&#34; command: La quantité pour le produit &#39;Apple TV&#39; doit être &#39;2&#39;.: expected &#39;2&#39; to equal 2 - expected &#34;2&#34; but got: &#34;2&#34;
+    at NightwatchAPI.&lt;anonymous&gt; (C:\Users\xilef\Documents\polymtl\log4420-a18-labs\TravauxPratiques\TP3\Corrige\tests\e2e\3-shopping-cart.js:61:28)
+    at runMicrotasks (&lt;anonymous&gt;)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)</failure>
+
+    
+    </testcase>
+  
+    <testcase name="Suppression d&#39;un item dans le panier" classname="3-shopping-cart" time="0.3780" assertions="2">
+
+      <failure message="Error while running &#34;elementIdText&#34; command: La quantité pour le produit &#39;Apple TV&#39; doit être &#39;2&#39;.: expected &#39;2&#39; to equal 2 - expected &#34;2&#34; but got: &#34;2&#34;">AssertionError: Error while running &#34;elementIdText&#34; command: La quantité pour le produit &#39;Apple TV&#39; doit être &#39;2&#39;.: expected &#39;2&#39; to equal 2 - expected &#34;2&#34; but got: &#34;2&#34;
+    at NightwatchAPI.&lt;anonymous&gt; (C:\Users\xilef\Documents\polymtl\log4420-a18-labs\TravauxPratiques\TP3\Corrige\tests\e2e\3-shopping-cart.js:61:28)
+    at runMicrotasks (&lt;anonymous&gt;)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)</failure>
+
+    
+    </testcase>
+  
+    <testcase name="Augmentation de la quantite associee a un item dans le panier" classname="3-shopping-cart" time="0.3850" assertions="2">
+
+      <failure message="Error while running &#34;elementIdText&#34; command: La quantité pour le produit &#39;Apple TV&#39; doit être &#39;3&#39;.: expected &#39;3&#39; to equal 3 - expected &#34;3&#34; but got: &#34;3&#34;">AssertionError: Error while running &#34;elementIdText&#34; command: La quantité pour le produit &#39;Apple TV&#39; doit être &#39;3&#39;.: expected &#39;3&#39; to equal 3 - expected &#34;3&#34; but got: &#34;3&#34;
+    at NightwatchAPI.&lt;anonymous&gt; (C:\Users\xilef\Documents\polymtl\log4420-a18-labs\TravauxPratiques\TP3\Corrige\tests\e2e\3-shopping-cart.js:61:28)
+    at runMicrotasks (&lt;anonymous&gt;)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)</failure>
+
+    
+    </testcase>
+  
+    <testcase name="Diminution de la quantite associee a un item dans le panier" classname="3-shopping-cart" time="0.3640" assertions="2">
+
+      <failure message="Error while running &#34;elementIdText&#34; command: La quantité pour le produit &#39;Apple TV&#39; doit être &#39;2&#39;.: expected &#39;2&#39; to equal 2 - expected &#34;2&#34; but got: &#34;2&#34;">AssertionError: Error while running &#34;elementIdText&#34; command: La quantité pour le produit &#39;Apple TV&#39; doit être &#39;2&#39;.: expected &#39;2&#39; to equal 2 - expected &#34;2&#34; but got: &#34;2&#34;
+    at NightwatchAPI.&lt;anonymous&gt; (C:\Users\xilef\Documents\polymtl\log4420-a18-labs\TravauxPratiques\TP3\Corrige\tests\e2e\3-shopping-cart.js:61:28)
+    at runMicrotasks (&lt;anonymous&gt;)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)</failure>
+
+    
+    </testcase>
+  
+    <testcase name="Suppression de tous les produits dans le panier" classname="3-shopping-cart" time="0.3100" assertions="2">
+
+      <failure message="Error while running &#34;elementIdText&#34; command: La quantité pour le produit &#39;Apple TV&#39; doit être &#39;2&#39;.: expected &#39;2&#39; to equal 2 - expected &#34;2&#34; but got: &#34;2&#34;">AssertionError: Error while running &#34;elementIdText&#34; command: La quantité pour le produit &#39;Apple TV&#39; doit être &#39;2&#39;.: expected &#39;2&#39; to equal 2 - expected &#34;2&#34; but got: &#34;2&#34;
+    at NightwatchAPI.&lt;anonymous&gt; (C:\Users\xilef\Documents\polymtl\log4420-a18-labs\TravauxPratiques\TP3\Corrige\tests\e2e\3-shopping-cart.js:61:28)
+    at runMicrotasks (&lt;anonymous&gt;)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)</failure>
+
+    
+    </testcase>
+  
+
+  
+
+    
+
+  
+  </testsuite>
+</testsuites>

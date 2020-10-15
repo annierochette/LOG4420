@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="0"
+            tests="0">
+
+  <testsuite name="4-order"
+    errors="1" failures="0" hostname="" id="" package="4-order" skipped="4"
+    tests="0" time="0.000" timestamp="">
+  
+
+  
+    <system-err>
+        Error: An error occurred while retrieving a new session: &#34;socket hang up&#34;
+   
+    </system-err>
+  
+
+    
+    <error message="An error occurred while retrieving a new session: &#34;socket hang up&#34;"><![CDATA[
+      Error: An error occurred while retrieving a new session: &#34;socket hang up&#34;
+    at Selenium2Protocol.handleSessionCreateError (C:\Users\xilef\Documents\polymtl\log4420-a18-labs\TravauxPratiques\TP3\Corrige\node_modules\nightwatch\lib\transport\transport.js:103:15)
+    at HttpRequest.&lt;anonymous&gt; (C:\Users\xilef\Documents\polymtl\log4420-a18-labs\TravauxPratiques\TP3\Corrige\node_modules\nightwatch\lib\transport\transport.js:159:32)
+    at HttpRequest.emit (events.js:315:20)
+    at ClientRequest.&lt;anonymous&gt; (C:\Users\xilef\Documents\polymtl\log4420-a18-labs\TravauxPratiques\TP3\Corrige\node_modules\nightwatch\lib\http\request.js:142:19)
+    at ClientRequest.emit (events.js:327:22)
+    at Socket.socketCloseListener (_http_client.js:400:11)
+    at Socket.emit (events.js:327:22)
+    at TCP.&lt;anonymous&gt; (net.js:674:12)
+      ]]></error>  
+
+  
+    
+    <testcase
+      name="État du panier d&#39;achats" classname="4-order">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Soumission d&#39;un formulaire invalide" classname="4-order">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Remplissage du formulaire" classname="4-order">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Soumission d&#39;un formulaire valide" classname="4-order">
+      <skipped />
+    </testcase>
+    
+  
+  </testsuite>
+</testsuites>
