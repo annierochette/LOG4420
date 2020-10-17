@@ -20,15 +20,12 @@ $(function() {
             required: true,
             creditcard: true
         }
+        //TODO: Ajouter vérification pour la date d'expiration carte + message
       },
       // Specify validation error messages
     //   messages: {
-    //     firstname: "Please enter your firstname",
-    //     lastname: "Please enter your lastname",
-    //     email: "Please enter a valid email address"
+
     //   },
-      // Make sure the form is submitted to the destination defined
-      // in the "action" attribute of the form when valid
       submitHandler: function(form) {
         form.submit();
       }
