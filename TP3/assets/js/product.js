@@ -1,8 +1,6 @@
 
-//TODO: Récupérer le paramètre dans l'URL
-//TODO: Fetch + afficher les informations du produit
-
 var products;
+var activeProduct;
 
 var req = new XMLHttpRequest();
 var url = "data/products.json";
@@ -11,19 +9,52 @@ var url = "data/products.json";
 req.onreadystatechange = function() {
     if(this.readyState == 4 && this.status == 200) {
         products = JSON.parse(this.response);
-        console.log(products);
+
     }
 }
 req.open("GET", url, true);
 req.send();
 
 $(function() {
-  console.log( 'ready!' );
+  //Récupérer le paramètre dans l'URL
+  var selectedId = urlParam();
+
+  
+  activeProduct = $.grep(products, function(prod){
+    return prod.id === Number(selectedId);
+  })[0];
+
+  //Afficher les informations du produit
+  if(activeProduct != undefined){
+    var imageSrc = './assets/img/' + activeProduct.image;
+    var price = activeProduct.price + '$';
+    
+    $('#product-name').text(activeProduct.name);
+    $('#product-image').attr("src", imageSrc);
+    $('#product-desc').append(activeProduct.description);
+    $('#product-price').text(price);
+
+    activeProduct.features.forEach(e => {
+      var html = '<li>' + e +'</li>';
+      $('#product-features').append(html);
+    });
+
+  }
+
+  //Page d'erreur si ID invalide
+  else {
+    document.getElementById('product-name').nextElementSibling.innerHTML = "";
+    document.getElementById('product-name').innerText = "Page non trouvée !";
+  }
+
 });
 
 
+function urlParam() {
+  var result = window.location.href.split("#");
 
-//TODO: Page d'erreur si ID invalide
+  return result[1] || 0;
+}
 
 
 //TODO: Bouton d'ajout fonctionnel
