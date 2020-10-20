@@ -18,27 +18,21 @@ req.send();
 $(function() {
   //Récupérer le paramètre dans l'URL
   var selectedId = urlParam();
-
-  
   activeProduct = $.grep(products, function(prod){
     return prod.id === Number(selectedId);
   })[0];
-
   //Afficher les informations du produit
   if(activeProduct != undefined){
     var imageSrc = './assets/img/' + activeProduct.image;
     var price = activeProduct.price + '$';
-    
     $('#product-name').text(activeProduct.name);
     $('#product-image').attr("src", imageSrc);
     $('#product-desc').append(activeProduct.description);
     $('#product-price').text(price);
-
     activeProduct.features.forEach(e => {
       var html = '<li>' + e +'</li>';
       $('#product-features').append(html);
     });
-
   }
 
   //Page d'erreur si ID invalide
