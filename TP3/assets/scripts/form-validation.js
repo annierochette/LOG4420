@@ -1,7 +1,7 @@
 // @ts-nocheck
 "use strict";
 const orderKey = "orders";
-const cartKey = "uneCle";
+const cartKey = "itemsInShoppingCart";
 
 // Wait for the DOM to be ready
 

@@ -1,8 +1,8 @@
-const storageKey = "uneCle";
+const storageKey = "itemsInShoppingCart";
 let items = [];
 
-$(tempStore);
-// $(renderView);
+// $(tempStore);
+$(renderView);
 
 function tempStore() {
   showTable(false);
@@ -20,7 +20,6 @@ function renderView() {
 
     $("tbody").empty();
     items.forEach((item, index) => {
-      item.quantity = 3;
       const element = addProduct(item);
       $("tbody").append(element);
 
@@ -35,6 +34,7 @@ function renderView() {
           element.remove();
           items.splice(index, 1);
           updateLocalStorage();
+          renderView();
         }
       });
 
