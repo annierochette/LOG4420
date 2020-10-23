@@ -1,1 +1,4 @@
 node_modules/
+tests/
+tests/reports/
+TP3/selenium-server.log

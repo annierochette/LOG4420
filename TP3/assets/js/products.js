@@ -74,9 +74,9 @@ function createProducts() {
   sortedProducts = sortedProducts.sort(compareValues(criteria, sortOrder));
 
   sortedProducts.forEach(prod => {
-    out += `<div class="product"> <a href="./product.html?id=#${prod.id}" title="En savoir plus..."> <h2>${
+    out += `<div class="product"> <a href="./product.html?id=${prod.id}" title="En savoir plus..."> <h2>${
       prod.name}</h2> <img alt="${prod.name}" src="./assets/img/${
-      prod.image}"> <p class="price"><small>Prix</small>  ${prod.price}&thinsp;$</p> </a></div>`;
+      prod.image}"> <p class="price"><small>Prix</small>  ${String(prod.price).replace(".", ",")}&thinsp;$</p> </a></div>`;
   });
 
   //Affiche le bon nombre de produits

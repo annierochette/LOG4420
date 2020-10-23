@@ -66,7 +66,7 @@ function showProduct() {
   //Afficher les informations du produit
   if(activeProduct != undefined) {
     const imageSrc = `./assets/img/${activeProduct.image}`;
-    const price = `${activeProduct.price} $`;
+    const price = `${String(activeProduct.price).replace(".", ",")} $`;
     $("#product-name").text(activeProduct.name);
     $("#product-image").attr("src", imageSrc);
     $("#product-desc").append(activeProduct.description);
@@ -78,16 +78,15 @@ function showProduct() {
   }
   //Page d'erreur si ID invalide
   else {
-    document.getElementById("product-name").nextElementSibling.innerHTML = "";
-    document.getElementById("product-name").innerText = "Page non trouvée !";
+    $("#product-name").nextAll().remove();
+    document.getElementById("product-name").innerText = "Page non trouvée!";
   }
 }
 
 function urlParam() {
-  const result = window.location.href.split("#");
+  const result = window.location.href.split("=");
 
   return result[1] || 0;
 }
 
-//TODO: Boîte dialog pour confirmer l'ajout au panier pour 5s
 //TODO: Mettre à jour l'îcone de panier
