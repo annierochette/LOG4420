@@ -83,7 +83,7 @@ function addProduct(item) {
   return $(`<tr>
   <td><button class="remove-item-button" title="Supprimer"><i class="fa fa-times"></i></button></td>
   <td><a href="./product.html">${item.name}</a></td>
-  <td>${item.price}&thinsp;$</td>
+  <td>${item.price.toFixed(2).replace(".", ",")}&thinsp;$</td>
   <td>
     <div class="row">
       <div class="col">
@@ -95,7 +95,7 @@ function addProduct(item) {
       </div>
     </div>
   </td>
-  <td>${item.quantity * item.price}&thinsp;$</td>
+  <td>${(item.quantity * item.price).toFixed(2).replace(".", ",")}&thinsp;$</td>
 </tr>`);
 }
 
@@ -127,7 +127,7 @@ function updateTotal() {
     total += item.price * item.quantity;
   });
 
-  $(".shopping-cart-total").html(`Total: <strong>${total}&thinsp;$</strong>`);
+  $(".shopping-cart-total").html(`Total: <strong>${total.toFixed(2).replace(".", ",")}&thinsp;$</strong>`);
 }
 
 
