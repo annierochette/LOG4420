@@ -21,6 +21,8 @@ $(function() {
     const qty = $("#product-quantity").val();
     addToCart(qty);
     $("#dialog").fadeIn(400).delay(5000).fadeOut(400);
+
+    return false;
   });
 
 });
