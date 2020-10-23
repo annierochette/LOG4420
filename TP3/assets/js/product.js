@@ -39,7 +39,7 @@ function addToCart(quantity) {
   };
 
   if (!currentCart) {
-    localStorage.setItem("itemsInShoppingCart", JSON.stringify(newItem));
+    addToLocalStorage(newItem);
   } else {
     localStorage.removeItem("itemsInShoppingCart");
     if(!Array.isArray(currentCart)) {
@@ -54,10 +54,10 @@ function addToCart(quantity) {
           prod.quantity = newQty;
         }
       });
-      localStorage.setItem("itemsInShoppingCart", JSON.stringify(cart));
+      addToLocalStorage(cart);
     } else {
       cart.push(newItem);
-      localStorage.setItem("itemsInShoppingCart", JSON.stringify(cart));
+      addToLocalStorage(cart);
     }
   }
 }
@@ -92,3 +92,14 @@ function urlParam() {
 }
 
 //TODO: Mettre à jour l'îcone de panier
+function addToLocalStorage(items) {
+  localStorage.setItem("itemsInShoppingCart", JSON.stringify(items));
+
+  if (items.length) {
+    $(".shopping-cart > .count").html(`${items.length}`);
+    $(".shopping-cart > .count").show();
+  }
+  else {
+    $(".shopping-cart > .count").hide();
+  }
+}

@@ -1,16 +1,7 @@
 const storageKey = "itemsInShoppingCart";
 let items = [];
 
-// $(tempStore);
 $(renderView);
-
-function tempStore() {
-  showTable(false);
-
-  $.get("./data/products.json").then(allItems => {
-    localStorage.setItem(storageKey, JSON.stringify(allItems));
-  }).then(renderView);
-}
 
 function renderView() {
   items = JSON.parse(localStorage.getItem(storageKey));
@@ -35,6 +26,7 @@ function renderView() {
           items.splice(index, 1);
           updateLocalStorage();
           renderView();
+          console.log($(".shopping-cart > .count").html()-1)
         }
       });
 
@@ -133,4 +125,12 @@ function updateTotal() {
 
 function updateLocalStorage() {
   localStorage.setItem(storageKey, JSON.stringify(items));
+
+  if (items.length) {
+    $(".shopping-cart > .count").html(`${items.length}`);
+    $(".shopping-cart > .count").show();
+  }
+  else {
+    $(".shopping-cart > .count").hide();
+  }
 }
