@@ -1,7 +1,3 @@
-/* global $ */
-/* global localStorage */
-/* global confirm */
-
 const storageKey = "uneCle";
 let items = [];
 
