@@ -8,6 +8,7 @@ const session = require("express-session");
 
 require("./lib/db");
 const index = require("./routes/index");
+const products = require("./routes/products");
 
 const app = express();
 
@@ -35,6 +36,7 @@ app.use(session({
 }));
 
 app.use("/", index);
+app.use("/api/products/", products);
 
 /**
  * @typedef {Error & {status?: number}} ErrWithStatus
