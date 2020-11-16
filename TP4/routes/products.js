@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const { body, validationResult } = require('express-validator')
 const router = express.Router()
 
 const Product = mongoose.model('Product');
@@ -8,7 +9,6 @@ const Product = mongoose.model('Product');
 router.get('/', async (req, res) => {
     try {
         const products = await Product.find(categorySort(req.query)).sort(criteriaSort(req.query));
-        
         res.send(products);
     } catch(err) {
         res.status(400).json({ message: err.message });
@@ -28,7 +28,20 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-router.post('/', async (req, res) => {
+router.post('/', [
+    body('id').isInt(),
+    body('name').isAlpha(),
+    body('price').isFloat(),
+    body('image').notEmpty(),
+    body('category').isAlpha(),
+    body('description').notEmpty(),
+    body('features').isArray(),
+], async (req, res) => {
+    const errors = validationResult(req);
+    if(!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+    }
+    
     const product = new Product({
         id: req.body.id,
         name: req.body.name,
@@ -71,7 +84,6 @@ router.delete('/', async (req, res) => {
 });
 
 function criteriaSort(query) {
-    console.log(query.criteria)
     let sort = "";
     switch(String(query.criteria)) {
         case "alpha-asc":
