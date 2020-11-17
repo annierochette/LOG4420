@@ -50,7 +50,8 @@ router.post('/', [
     })
     try {
         const newOrder = await order.save();
-        res.status(201).json(newOrder);
+        // res.status(201).json(newOrder);
+        res.sendStatus(201);
     } catch(err) {
         res.status(400)
     }
@@ -74,18 +75,10 @@ router.delete('/:id', async (req, res) => {
 router.delete('/', async (req, res) => {
     try {
         await Order.deleteMany({});
-        res.send(204)
+        res.sendStatus(204)
     } catch(err) {
         res.status(500)
     }
 });
-
-function validateInput() {
-    body('firstName').isAlpha();
-    body('lastName').isAlpha();
-    body('email').isEmail();
-    body('phone').isMobilePhone("any");
-    body('products').isArray();
-}
 
 module.exports = router;

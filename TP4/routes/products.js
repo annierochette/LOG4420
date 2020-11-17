@@ -8,7 +8,7 @@ const Product = mongoose.model('Product');
 
 router.get('/', async (req, res) => {
     try {
-        const products = await Product.find(categorySort(req.query)).sort(criteriaSort(req.query));
+        const products = await Product.find(categorySort(req.query)).collation({ locale: "en" }).sort(criteriaSort(req.query));
         res.send(products);
     } catch(err) {
         res.status(400).json({ message: err.message });
@@ -30,7 +30,7 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', [
     body('id').isInt(),
-    body('name').isAlpha(),
+    body('name').isAlphanumeric(),
     body('price').isFloat(),
     body('image').notEmpty(),
     body('category').isAlpha(),
@@ -77,9 +77,9 @@ router.delete('/:id', async (req, res) => {
 router.delete('/', async (req, res) => {
     try {
         await Product.deleteMany({});
-        res.send(204)
+        res.sendStatus(204)
     } catch(err) {
-        res.status(500)
+        res.sendStatus(500)
     }
 });
 
@@ -98,7 +98,6 @@ function criteriaSort(query) {
         default: 
             sort = '{"price": 1}'
     }
-    console.log(sort)
     return JSON.parse(sort);
 }
 
