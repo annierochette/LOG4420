@@ -1,12 +1,16 @@
 const express = require("express");
+const mongoose = require('mongoose')
 const router = express.Router();
+
+const Product = mongoose.model('Product');
 
 router.get(["/", "/accueil"], (req, res) => {
     res.render("../views/pages/index", {title: "Accueil", shoppingCartCount: 5 });
 });
 
-router.get("/produits", (req, res) => {
-    res.render("../views/pages/products", {title: "Produits", shoppingCartCount: 5 });
+router.get("/produits", async (req, res) => {
+    const products = await Product.find({}).collation({ locale: "en" }).sort({"price": 1});
+    res.render("../views/pages/products", {title: "Produits", shoppingCartCount: 5, productList: products });
 });
 
 router.get("/produits/:id", (req, res) => {

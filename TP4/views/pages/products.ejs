@@ -26,10 +26,18 @@
       </section>
     </section>
     <article>
-      <span class="right-header" id="products-count">13 produits</span>
+      <span class="right-header" id="products-count"><%- productList.length %> produits</span>
       <h1>Produits</h1>
       <div class="products" id="products-list">
-        <div class="loading"></div>
+        <% for(var i=0; i < productList.length; i++) { %>
+          <div class="product" data-product-id=<%- productList[i].id %>>
+            <a href="./produits/<%- productList[i].id %>" title="En savoir plus...">
+              <h2><%- productList[i].name %></h2>
+              <img alt="product" src="./assets/img/<%- productList[i].image %>">
+              <p class="price"><small>Prix</small> <%- productList[i].price %></p>
+            </a>
+          </div>
+       <% } %>
       </div>
     </article>
   </main>
