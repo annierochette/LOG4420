@@ -4,9 +4,18 @@ const { body, validationResult } = require('express-validator')
 const router = express.Router()
 
 const Product = mongoose.model('Product');
+const criterias = ["alpha-asc", "alpha-dsc", "price-asc", "price-dsc"];
+const categories = ["screens", "cameras", "computers", "consoles"];
 
 
 router.get('/', async (req, res) => {
+    if(!criterias.includes(String(req.query.criteria)) && req.query.criteria != undefined ) {
+        res.status(400);
+    }
+    if(!categories.includes(String(req.query.category)) && req.query.category != undefined ) {
+        res.status(400);
+    }
+
     try {
         const products = await Product.find(categorySort(req.query)).collation({ locale: "en" }).sort(criteriaSort(req.query));
         res.send(products);
@@ -29,19 +38,19 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', [
-    body('id').isInt(),
-    body('name').isAlphanumeric(),
+    body('id').isInt({ min: 1 }),
+    body('name').notEmpty(),
     body('price').isFloat(),
     body('image').notEmpty(),
     body('category').isAlpha(),
     body('description').notEmpty(),
-    body('features').isArray(),
+    body('features').isArray({ min: 2 }),
 ], async (req, res) => {
     const errors = validationResult(req);
-    if(!errors.isEmpty()) {
+    if(!errors.isEmpty() || !categories.includes(req.body.category)) {
         return res.status(400).json({ errors: errors.array() });
     }
-    
+
     const product = new Product({
         id: req.body.id,
         name: req.body.name,
@@ -83,7 +92,7 @@ router.delete('/', async (req, res) => {
     }
 });
 
-function criteriaSort(query) {
+function criteriaSort(query, res) {
     let sort = "";
     switch(String(query.criteria)) {
         case "alpha-asc":
@@ -95,13 +104,13 @@ function criteriaSort(query) {
         case "price-dsc":
             sort = '{"price": -1}'
             break;
-        default: 
+        default:
             sort = '{"price": 1}'
     }
     return JSON.parse(sort);
 }
 
-function categorySort(query) {
+function categorySort(query, res) {
     let sort = "";
     switch(query.category) {
         case "cameras":
@@ -116,8 +125,8 @@ function categorySort(query) {
         case "screens":
             sort = '{"category": "screens"}'
             break;
-        default: 
-            sort = '{}'
+        default:
+            sort = '{}';
     }
 
     return JSON.parse(sort);
