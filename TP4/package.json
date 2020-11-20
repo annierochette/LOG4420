@@ -8,6 +8,7 @@
     "e2e": "nightwatch --config ./tests/nightwatch.json"
   },
   "dependencies": {
+    "axios": "^0.21.0",
     "body-parser": "^1.19.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",
