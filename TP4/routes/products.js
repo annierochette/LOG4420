@@ -30,7 +30,8 @@ router.get('/:id', async (req, res) => {
         if(product.length == 0) {
             res.sendStatus(404);
         } else {
-            res.json(product);
+    
+            res.status(200).send(product[0]);
         }
     } catch(err) {
         res.status(500)

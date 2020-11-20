@@ -26,7 +26,7 @@ router.get('/:id', async (req, res) => {
         if(order.length == 0) {
             res.sendStatus(404);
         } else {
-            res.status(200).json(order);
+            res.status(200).json(order[0]);
         }
     } catch(err) {
         res.status(400).json({ message: err.message });
@@ -56,8 +56,11 @@ router.post('/', [
     })
     try {
         const idExist = await Order.exists({id: req.body.id});
-        if(idExist || !areProductsValid(req.body.products)){
-            res.status(400);
+        // if(idExist || !areProductsValid(req.body.products)){
+        //     res.status(400);
+        // }
+        if(idExist){
+            return res.sendStatus(400);
         }
 
         const newOrder = await order.save();
@@ -91,21 +94,21 @@ router.delete('/', async (req, res) => {
     }
 });
 
-async function areProductsValid(products) {
+// async function areProductsValid(products) {
     
-    if(products.length == 0) {
-        return false;
-    }
+//     if(products.length == 0) {
+//         return false;
+//     }
     
-    await products.forEach(prod => {
-        const idExist = Product.exists({ id: prod.id });
-        if(!prod.id.isInt()|| !prod.quantity.isInt({ min: 0 }) || !idExist) {
-            return false;
-        }
+//     await products.forEach(prod => {
+//         const idExist = Product.exists({ id: prod.id });
+//         if(!prod.id.isInt()|| !prod.quantity.isInt({ min: 0 }) || !idExist) {
+//             return false;
+//         }
 
-    });
+//     });
 
-    return true;
-}
+//     return true;
+// }
 
 module.exports = router;
