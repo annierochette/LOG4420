@@ -37,11 +37,11 @@ router.get("/contact", (req, res) => {
 router.get("/panier", async (req, res) => {
     
     try {
-        const answer = await axios.get(`http://localhost:8000/api/shopping-cart`);
-        const productList = answer.data;
+        const options = {headers: {"content-type": "application/json" }};
+        let answer = await axios.get(`http://localhost:8000/api/shopping-cart`, options);
+        let productList = answer.data;
         res.render("../views/pages/shopping-cart", {title: "Panier", shoppingCartCount: 5, productList: productList, formatPrice: formatPrice });
     } catch (err) {
-        console.log(err);
         res.sendStatus(err.response.status);
     }
 });

@@ -19,21 +19,23 @@
           </thead>
           <tbody>
             <% for (let product of productList) { %>
-              <td><button class="remove-item-button" title="Supprimer"><i class="fa fa-times"></i></button></td>
-              <td><a href="/produits/<%- product.id %>>"><%- product.name %></a></td>
-            <td><%- formatPrice(product.price) %></td>
-            <td>
-              <div class="row">
-                <div class="col">
-                  <button title="Retirer" disabled=""><i class="fa fa-minus"></i></button>
-                </div>
-                <div class="col"><%- product.quantity %></div>
-                <div class="col">
-                  <button title="Ajouter"><i class="fa fa-plus"></i></button>
-                </div>
-              </div>
-            </td>
-            <td><%- product.total %></td> 
+              <tr>
+                <td><button class="remove-item-button" title="Supprimer"><i class="fa fa-times"></i></button></td>
+                <td><a href="/produits/<%- product.id %>>"><%- product.name %></a></td>
+                <td><%- formatPrice(product.price) %></td>
+                <td>
+                  <div class="row">
+                    <div class="col">
+                      <button title="Retirer" disabled=""><i class="fa fa-minus"></i></button>
+                    </div>
+                    <div class="col"><%- product.quantity %></div>
+                    <div class="col">
+                      <button title="Ajouter"><i class="fa fa-plus"></i></button>
+                    </div>
+                  </div>
+                </td>
+                <td><%- product.total %></td>
+              </tr> 
             <% } %>
           </tbody>
         </table>
@@ -45,8 +47,8 @@
   </main>
   <%- include("../templates/footer") -%>
   <script type="module">
-    import { initShoppingCartController } from "./assets/scripts/shopping-cart.controller.js";
-    import { initProductController } from "./assets/scripts/products.controller.js"
+    import { initShoppingCartController } from "/assets/scripts/shopping-cart.controller.js";
+    import { initProductController } from "/assets/scripts/products.controller.js"
     initShoppingCartController();
     initProductController();
   </script>
