@@ -56,10 +56,9 @@ router.post('/', [
     })
     try {
         const idExist = await Order.exists({id: req.body.id});
-        // if(idExist || !areProductsValid(req.body.products)){
-        //     res.status(400);
-        // }
-        if(idExist){
+        const productValidity = await areProductsValid(req.body.products)
+        
+        if(idExist || !productValidity){
             return res.sendStatus(400);
         }
 
@@ -94,21 +93,26 @@ router.delete('/', async (req, res) => {
     }
 });
 
-// async function areProductsValid(products) {
+async function areProductsValid(products) {
+    let valid = true;
+    if(products.length === 0) {
+        valid = false;
+    }
     
-//     if(products.length == 0) {
-//         return false;
-//     }
+    for(const prod of products) {
+        if(typeof prod.id == 'number') { 
+            const idExist = await Product.exists({ id: prod.id });
+            if(!idExist) {
+                valid = false;
+            }
+        } else if(typeof prod.id !== 'number') {
+            valid = false;
+        } else if(typeof prod.quantity !== 'number' || prod.quantity < 1) {
+            valid = false;
+        }
+    }
     
-//     await products.forEach(prod => {
-//         const idExist = Product.exists({ id: prod.id });
-//         if(!prod.id.isInt()|| !prod.quantity.isInt({ min: 0 }) || !idExist) {
-//             return false;
-//         }
-
-//     });
-
-//     return true;
-// }
+    return valid;
+}
 
 module.exports = router;

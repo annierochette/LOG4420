@@ -26,7 +26,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
     try {
-        const product = await Product.find({id: req.params.id});
+        const product = await Product.find({ id: req.params.id });
         if(product.length == 0) {
             res.sendStatus(404);
         } else {
@@ -50,6 +50,11 @@ router.post('/', [
     const errors = validationResult(req);
     if(!errors.isEmpty() || !categories.includes(req.body.category)) {
         return res.status(400).json({ errors: errors.array() });
+    }
+
+    const idExist = await Product.exists({ id: req.body.id });
+    if(idExist){
+        return res.sendStatus(400);
     }
 
     const product = new Product({
@@ -76,7 +81,7 @@ router.delete('/:id', async (req, res) => {
             res.sendStatus(404)
         }
         else{
-            await Product.deleteOne({id: req.params.id});
+            await Product.deleteOne({ id: req.params.id });
             res.sendStatus(204)
         }
     } catch(err) {
