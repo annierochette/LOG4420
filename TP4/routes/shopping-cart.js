@@ -37,13 +37,9 @@ router.post('/', [
         return res.status(400).json({ errors: errors.array() });
     }
 
-    try {
-        const idExist = await Product.exists({id: req.body.productId});
-        if(!idExist){
-            return res.status(400);
-        }
-    } catch(err) {
-        res.status(500);
+    const idExist = await Product.exists({id: req.body.productId});
+    if(!idExist){
+        return res.sendStatus(400);
     }
 
     let panier = req.session.panier;
@@ -81,15 +77,15 @@ router.put('/:productId', [
 
     const panier = req.session.panier;
     let pIndex = -1;
-    panier.forEach(prod => {
+    panier.forEach((prod, index) => {
         if(prod.productId === Number(req.params.productId)) {
-          pIndex = prod.indexOf();
+          pIndex = index
         }
     });
     if(pIndex === -1){
         res.sendStatus(404);
     } else {
-        panier[pIndex].quantity += req.body.quantity;
+        panier[pIndex].quantity = req.body.quantity;
         req.session.panier = panier;
         res.sendStatus(204)
     }
@@ -100,20 +96,20 @@ router.delete('/:productId', (req, res) => {
     let pIndex = -1;
 
     if(!req.session.panier){
-        return res.status(404);
+        return res.sendStatus(404);
     }
 
-    panier.forEach(prod => {
+    panier.forEach((prod, index) => {
         if(prod.productId == Number(req.params.productId)) {
-          pIndex = prod.indexOf();
+          pIndex = index;
         }
     });
     if(pIndex === -1){
-        res.status(404);
+        return res.sendStatus(404);
     } else {
-        const newPanier = panier.splice(pIndex, 1);
-        req.session.panier = newPanier;
-        res.status(204);
+
+        req.session.panier.splice(pIndex, 1);
+        res.sendStatus(204);
     }
 });
 
