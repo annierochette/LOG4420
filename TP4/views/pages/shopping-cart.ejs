@@ -19,7 +19,7 @@
           </thead>
           <tbody>
             <% for (let product of productList) { %>
-              <tr>
+              <tr data-product-id=<%- product.id %>>
                 <td><button class="remove-item-button" title="Supprimer"><i class="fa fa-times"></i></button></td>
                 <td><a href="/produits/<%- product.id %>>"><%- product.name %></a></td>
                 <td><%- formatPrice(product.price) %></td>
@@ -46,9 +46,15 @@
     </article>
   </main>
   <%- include("../templates/footer") -%>
+  <%- include("../templates/commonScripts") -%>
+  <script src="/assets/js/jquery.validate.min.js"></script>
+  <script src="/assets/js/additonal-methods.min.js"></script>
+  <script src="/assets/js/message_fr.js"></script>
+  <script src="/assets/scripts/order.service.js"></script>
+  <script src="/assets/scripts/order.controller.js"></script>
   <script type="module">
     import { initShoppingCartController } from "/assets/scripts/shopping-cart.controller.js";
-    import { initProductController } from "/assets/scripts/products.controller.js"
+    import { initProductController } from "/assets/scripts/products.controller.js";    
     initShoppingCartController();
     initProductController();
   </script>

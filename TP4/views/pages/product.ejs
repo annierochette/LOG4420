@@ -24,7 +24,7 @@
             </ul>
           </section>
           <hr>
-          <form class="pull-right" id="add-to-cart-form">
+          <form class="pull-right" id="add-to-cart-form" data-product-id=<%- product.id %>>
             <label for="product-quantity">Quantité:</label>
             <input class="form-control" type="number" value="1" min="1" id="product-quantity">
             <button class="btn" title="Ajouter au panier" type="submit">
@@ -40,7 +40,7 @@
     </article>
   </main>
   <%- include("../templates/footer") -%>
-
+  <%- include("../templates/commonScripts") -%>
   <script type="module">
     import { initShoppingCartController } from "/assets/scripts/shopping-cart.controller.js";
     import { initProductController } from "/assets/scripts/products.controller.js"
