@@ -19,7 +19,7 @@
           </thead>
           <tbody>
             <% for (let product of productList) { %>
-              <tr>
+              <tr data-product-id=<%- product.id %>>
                 <td><button class="remove-item-button" title="Supprimer"><i class="fa fa-times"></i></button></td>
                 <td><a href="/produits/<%- product.id %>>"><%- product.name %></a></td>
                 <td><%- formatPrice(product.price) %></td>
