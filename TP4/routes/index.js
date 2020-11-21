@@ -18,7 +18,6 @@ router.get("/produits", async (req, res) => {
 
 router.get("/produits/:id", async (req, res) => {
     try {
-        console.log(req.params.id)
         const answer = await axios.get("http://localhost:8000/api/products/" + req.params.id);
         const productList = answer.data;
         res.render("../views/pages/product", {title: "Produit", shoppingCartCount: 5, product: productList, formatPrice: formatPrice });
@@ -48,7 +47,7 @@ router.get("/commande", (req, res) => {
 });
 
 router.get("/confirmation", async (req, res) => {
-    let answer = await axios.get("http://localhost:8000/api/orders")
+    let answer = await axios.get("http://localhost:8000/api/orders");
     let order = answer.data[answer.data.length-1];
     let name = order.firstName + " " + order.lastName;
     res.render("../views/pages/confirmation", {title: "Confirmation", shoppingCartCount: 5, orderId: order.id, clientName: name });
