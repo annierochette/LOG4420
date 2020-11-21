@@ -1,9 +1,6 @@
 const express = require("express");
-const mongoose = require('mongoose')
 const router = express.Router();
 const axios = require('axios').default;
-
-const Product = mongoose.model('Product');
 
 function formatPrice(price) {
     return price.toFixed(2).replace(".", ",") + "&thinsp;$";
@@ -24,7 +21,7 @@ router.get("/produits/:id", async (req, res) => {
         console.log(req.params.id)
         const answer = await axios.get("http://localhost:8000/api/products/" + req.params.id);
         const productList = answer.data;
-        res.render("../views/pages/product", {title: "Produit", shoppingCartCount: 5, product: productList[0], formatPrice: formatPrice });
+        res.render("../views/pages/product", {title: "Produit", shoppingCartCount: 5, product: productList, formatPrice: formatPrice });
     } catch (err) {
         res.sendStatus(err.response.status);
     }
@@ -50,8 +47,15 @@ router.get("/commande", (req, res) => {
     res.render("../views/pages/order", {title: "Commande", shoppingCartCount: 5 });
 });
 
-router.get("/confirmation", (req, res) => {
-    res.render("../views/pages/confirmation", {title: "Confirmation", shoppingCartCount: 5 });
+router.get("/confirmation", async (req, res) => {
+    let answer = await axios.get("http://localhost:8000/api/orders")
+    let order = answer.data[answer.data.length-1];
+    let name = order.firstName + " " + order.lastName;
+    res.render("../views/pages/confirmation", {title: "Confirmation", shoppingCartCount: 5, orderId: order.id, clientName: name });
+});
+
+router.post("/confirmation.html", async (req, res) => {
+    res.redirect("/confirmation");
 });
 
 module.exports = router;
