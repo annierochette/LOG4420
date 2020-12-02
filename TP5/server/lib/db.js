@@ -28,5 +28,5 @@ mongoose.model("Product", Product);
 mongoose.Promise = global.Promise;
 
 
-const uri = `mongodb+srv://db:3O6FN6a3TaaeU24U@maxime.jvgij.mongodb.net/maxime?retryWrites=true&w=majority`;
+const uri = "mongodb+srv://admin:3WKhLrP6GuRvglOM@online-shop.4va55.mongodb.net/onlineshop?retryWrites=true&w=majority";
 mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true});

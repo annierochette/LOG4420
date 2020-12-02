@@ -1,9 +1,9 @@
 
 import '../css/App.css';
-import {Header} from "../_Common/Header.js"
-import {Footer} from "../_Common/Footer.js"
-import {useParams} from "react-router-dom";
-import {imageMap} from "../ProductsComponent/ProductImageLoader";
+import { Header } from "../_Common/Header.js"
+import { Footer } from "../_Common/Footer.js"
+import { useParams } from "react-router-dom";
+import { imageMap } from "../ProductsComponent/ProductImageLoader";
 import { useEffect, useState } from 'react';
 
 export function ProductComponent() {
@@ -11,7 +11,28 @@ export function ProductComponent() {
     const { id } = useParams();
 
     const [product, setProduct] = useState();
+    const [quantity, setQuantity] = useState();
     const [loading, setLoading] = useState(true);
+
+    const addToCart = async (event) => {
+        event.preventDefault();
+        let qty = quantity
+        if(quantity === undefined){
+            qty = 1;
+        }
+        try {
+            const req = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                credentials: 'include',
+                body: JSON.stringify({ productId: Number(id), quantity: qty })
+            };
+            await fetch(`http://localhost:4000/api/shopping-cart`, req)
+                .then(response => console.log(response));
+        } catch(e) {
+            console.error(e);
+        }
+    }
     
     useEffect(() => {
         const fetchData = async () => {
@@ -59,9 +80,16 @@ export function ProductComponent() {
                             </ul>
                         </section>
                         <hr/>
-                        <form className="pull-right" id="add-to-cart-form">
+                        <form className="pull-right" id="add-to-cart-form" onSubmit={addToCart}>
                             <label htmlFor="product-quantity">Quantité:</label>
-                            <input className="form-control" type="number" defaultValue="1" min="1" id="product-quantity"/>
+                            <input 
+                                className="form-control" 
+                                type="number" 
+                                defaultValue="1" 
+                                min="1" 
+                                id="product-quantity"
+                                onChange={e => setQuantity(e.target.value)}
+                            />
                             <button className="btn" title="Ajouter au panier" type="submit">
                                 <i className="fa fa-cart-plus"></i>&nbsp; Ajouter
                             </button>
