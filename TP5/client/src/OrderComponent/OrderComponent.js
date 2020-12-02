@@ -14,12 +14,10 @@ export default class OrderComponent extends React.Component {
             "email": "",
             "telephone": "",
             "credit-card": "",
-            "credit-card-expiry": "",
-            "orderID": 0
+            "credit-card-expiry": ""
         }
 
         this.handleInputChange = this.handleInputChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleInputChange(event) {
@@ -28,23 +26,13 @@ export default class OrderComponent extends React.Component {
         this.setState({
             [fieldName]: event.target.value
         });
-
-        console.log("handleInputChange: " + this.state["first-name"])
-    }
-
-    handleSubmit(event) {
-        this.setState({ "orderID": this.state.orderID+1});
-        const infos = {
-            "name": this.state["first-name"] + this.state["last-name"],
-            "orderID": this.state.orderID
-        }
     }
     
     render() {
         const content = (
             <article>
                 <h1>Commande</h1>
-                <form id="order-form" action="/order" method="post">
+                <form id="order-form" action="/confirmation" method="post">
                     <section>
                         <h2>Contact</h2>
                         <div class="row">
