@@ -2,6 +2,7 @@
 import './css/App.css';
 import './css/style.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import OrderComponent from "./OrderComponent/OrderComponent.js"
 import { ConfirmationComponent } from "./ConfirmationComponent/ConfirmationComponent.js"
 import { HomeComponent } from "./HomeComponent/HomeComponent.js"
 import { ContactComponent } from "./ContactComponent/ContactComponent.js"
@@ -15,6 +16,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/"> <HomeComponent /> </Route>
+        <Route path="/commande"> <OrderComponent /> </Route>
         <Route path="/confirmation"> <ConfirmationComponent /> </Route>
         <Route path="/contact"> <ContactComponent/> </Route>
         <Route path="/products"> <ProductsComponent/> </Route>
