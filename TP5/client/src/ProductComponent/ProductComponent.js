@@ -27,8 +27,7 @@ export function ProductComponent() {
                 credentials: 'include',
                 body: JSON.stringify({ productId: Number(id), quantity: qty })
             };
-            await fetch(`http://localhost:4000/api/shopping-cart`, req)
-                .then(response => console.log(response));
+            await fetch(`http://localhost:4000/api/shopping-cart`, req);
         } catch(e) {
             console.error(e);
         }
