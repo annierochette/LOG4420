@@ -25,7 +25,7 @@ export function ProductComponent() {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 credentials: 'include',
-                body: JSON.stringify({ productId: Number(id), quantity: qty })
+                body: JSON.stringify({ productId: Number(id), quantity: Number(qty) })
             };
             await fetch(`http://localhost:4000/api/shopping-cart`, req);
         } catch(e) {
