@@ -29,7 +29,6 @@ export function Header(prop) {
 
     const currentActive = prop.currentActive;
     if (cartCount === 0) {
-        console.log("IS MEPKTkeolrNJKGNDFJKNKJDNKJ")
         return (
             <header>
                 <div className="header-container">
@@ -49,7 +48,7 @@ export function Header(prop) {
                                     <i className="fa fa-circle fa-stack-2x fa-inverse"></i>
                                     <i className="fa fa-shopping-cart fa-stack-1x"></i>
                                 </span>
-                                <span className="count" display="none">{cartCount}</span>
+                                <span className="count" hidden>{cartCount}</span>
                             </Link>
                         </li>
                     </ul>
