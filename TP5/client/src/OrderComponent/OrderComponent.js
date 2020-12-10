@@ -37,7 +37,12 @@ export default function OrderComponent() {
             };
 
             await fetch(`http://localhost:4000/api/orders`, req);
-            history.push("/confirmation", [firstName, lastName, id]);
+            history.push({
+                pathname: "/confirmation",
+                state: {
+                    name: firstName + " " + lastName,
+                    confirmNum: id,
+                }});
         } catch(e) {
             console.error(e);
         }

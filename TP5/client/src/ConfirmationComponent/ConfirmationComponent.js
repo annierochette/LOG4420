@@ -1,11 +1,16 @@
 import '../css/App.css';
 import {Header} from "../_Common/Header.js"
 import {Footer} from "../_Common/Footer.js"
+import { useLocation } from 'react-router-dom';
 
 export function ConfirmationComponent() {
   document.title="OnlineShop - Commande"
-  const name = "Félix Brunet";
-  const confirmNum = 1;
+  // const name = "Félix Brunet";
+  // const confirmNum = 1;
+  const location = useLocation();
+  const name = location.state.name;
+  const confirmNum = location.state.confirmNum;
+
   return (
     <div>
       <Header/>
