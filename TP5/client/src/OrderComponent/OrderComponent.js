@@ -19,14 +19,25 @@ export default function OrderComponent() {
         event.preventDefault();
         try {
             setId(id + 1);
-
+            const spReq = {
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json' },
+                credentials: 'include',
+            };
+            const itemsAns = await fetch("http://localhost:4000/api/shopping-cart", spReq);
+            const items = await itemsAns.json();
+            const products = items.map(item => {
+                return {"id": item.productId, "quantity": item.quantity}
+            })
+            
+            
             const order = { 
                 "id": id, 
                 "firstName": firstName, 
                 "lastName": lastName, 
                 "email": email, 
                 "phone": phone,
-                "products": [{"id": 11, "quantity": 4}]
+                "products": products
             };
 
             const req = {
@@ -36,13 +47,20 @@ export default function OrderComponent() {
                 body: JSON.stringify(order)
             };
 
-            await fetch(`http://localhost:4000/api/orders`, req);
-            history.push({
-                pathname: "/confirmation",
-                state: {
-                    name: firstName + " " + lastName,
-                    confirmNum: id,
-                }});
+            const ans = await fetch(`http://localhost:4000/api/orders`, req);
+            console.log(ans.status)
+            if (ans.status === 201) {
+                await fetch(`http://localhost:4000/api/shopping-cart`, {method: "DELETE", credentials: 'include'});
+    
+                history.push({
+                    pathname: "/confirmation",
+                    state: {
+                        name: firstName + " " + lastName,
+                        confirmNum: id,
+                    }});
+            } else {
+                console.log("Erreur")
+            }
         } catch(e) {
             console.error(e);
         }
